@@ -5,14 +5,18 @@ implementation of an intrusion detection system using ensemble machine learning 
 This project is carried out using the UNSW-15 data set 
 
 ## Technologies 
-- Python : [Python website](https://www.python.org/)
-- Streamlit : [Streamlit website](https://streamlit.io/)
-- Zeek : [Zeek website](https://zeek.org/)
-- Argus : [Argus website](https://pkgs.org/download/argus-client)
+- [Python](https://www.python.org/)
+- [Streamlit](https://streamlit.io/)
+- [Zeek](https://zeek.org/)
+- [Argus](https://pkgs.org/download/argus-client)
 
 ## Tools 
-- Pandas
-- Numpy
-- Scikit-learn
-- Matplotlib
-- Seaborn
+- [Pandas](https://pandas.pydata.org/)
+- [Numpy](https://numpy.org/)
+- [Scikit-learn](https://scikit-learn.org/)
+- [Matplotlib](https://matplotlib.org/)
+- [Seaborn](https://seaborn.pydata.org/)
+
+## Operating Systems
+- Windows
+- Linux
