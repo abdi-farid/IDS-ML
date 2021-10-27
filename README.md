@@ -23,4 +23,6 @@ This project is carried out using the UNSW-15 data set
 
 ## Structure 
 1. ***main.py*** : This is the main page of the application, it calls the functions defined in the other files. The application is launched by typing : **streamlit run main.py**
+
+When launching the application, the following welcome image appears with all the features available in the IDS 
 ![Home page](images/IDS-Home.PNG)
