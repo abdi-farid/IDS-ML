@@ -21,4 +21,6 @@ This project is carried out using the UNSW-15 data set
 - Windows
 - Linux
 
+## Structure 
+1. main.py
 
