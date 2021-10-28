@@ -6,16 +6,15 @@ import pandas as pd
 # path = 'D:\\M2\\S2\\Farid\\Notebook\\S2\\Memoire\\14 septembre\\ID exclus\\'
 path = 'models\\'
 
-# FILE READER ----------------------------------------------
+# function to read CSv file
 def read_dataset(data):
     return pd.read_csv(data, sep=',', encoding='cp1252')
 
-
+# function to upload CSV file
 def file_uploader():
     with st.sidebar.expander('Load data'):
         f = st.file_uploader('Upload your dataset',
                                     type='csv', help='Example : dataset.csv')
-        
         if f : 
             df = read_dataset(f)
             st.success('Successfully uploaded !')
@@ -23,24 +22,26 @@ def file_uploader():
             st.markdown('---')
             return df
 
+# sample the data set with percentage to be used
 def percentage_of_data(df):
     if len(df) != 0:
         of_data = st.sidebar.slider('Use % of data', min_value=1, max_value=99, value=20, step=1)
         return of_data            
 
 
-# GET MODELS NAMES ------------------------------------------
+# get list of models deployed 
 def get_models():
     import os 
     return [i for i in os.listdir(path) if len(i.split('.')) == 1]
 
+# display model names 
 def display_models():
     with st.sidebar.expander('Choose model'):
         model = st.selectbox('', ['---']+get_models())
         return model 
 
 
-# ENCODING FUNCTION -----------------------------------------
+# ENCODING FUNCTION 
 def ordinal_encoding(dataset):
     tmp_df = dataset.copy()
     start = 0
@@ -52,7 +53,7 @@ def ordinal_encoding(dataset):
     return tmp_df
 
 
-# PREPROCESSIONG FUNCTION ------------------------------------
+# PREPROCESSIONG FUNCTION 
 def preprocessing(df, percetage):
     from sklearn.model_selection import train_test_split
     from sklearn.preprocessing import MinMaxScaler
@@ -80,7 +81,7 @@ def preprocessing(df, percetage):
 
 
 
-# TABLE DES PERFORMANCES --------------------------------
+# get performances table
 def performances_table(model, X_test, y_test):
     from sklearn.metrics import accuracy_score, precision_score, f1_score, recall_score
 
@@ -97,11 +98,7 @@ def performances_table(model, X_test, y_test):
             st.dataframe(pd.DataFrame(tmp, index=['values']))
 
 
-
-
-
-
-# ROW TO DISPLAY IN PAGE ---------------------------------------------
+# ROW TO DISPLAY IN PAGE 
 def split_page(model, df, percentage_data_to_use, model_name):
     _,_, X_test, y_test = preprocessing(df, percentage_data_to_use)
 
@@ -116,10 +113,9 @@ def split_page(model, df, percentage_data_to_use, model_name):
 
     
     
-# MAIN FUNCTION ------------------------------------------------------
+# ------------------------------------------------------ MAIN FUNCTION ------------------------------------------------------
 def display_performances():
-    
-    
+
     df = file_uploader()
     if df is not None:
         percentage_data_to_use = percentage_of_data(df)
