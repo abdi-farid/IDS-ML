@@ -3,50 +3,52 @@ import pandas as pd
 import numpy as np
 
 
-# Expoloratory Data Analysis ----------------------------------------------
+# -------------------------------------------------------- Expoloratory Data Analysis --------------------------------------------------------
 
+# file uploader function
 def file_uploader():
     return st.sidebar.file_uploader('Upload your dataset',
      type='csv', help='Example : dataset.csv')
 
-
+# function to read CSV file
 def read_dataset(data):
     return pd.read_csv(data, sep=',', encoding='cp1252')
 
-
+# get shape of CSV file
 def get_shape(df):
     if st.checkbox('Shape'):
         st.write('Lines : ', df.shape[0], 'Columns : ',
          df.shape[1], ' ==> ', df.shape)
 
-
+# get some head line of CSV file
 def head_line_number(k):
     return st.slider('Lines', min_value=2, max_value=15, value=5, key=k)
 
-
+# get head of CSV file
 def get_head(df):
     if st.checkbox('Head'):
         n = head_line_number('1')
         st.dataframe(df.head(n))
 
-
+# get tail of CSV file
 def get_tail(df):
     if st.checkbox('Tail'):
         n = head_line_number('2')
         st.dataframe(df.head(n))
 
-
+# select some columns from CSV file
 def get_some_columns(df):
     if st.checkbox('Columns to display'):
         cols = st.multiselect('Columns', df.columns, default='dur')
         n = head_line_number('3')
         st.dataframe(df[cols].head(n))
 
-
+# get describe of CSV file
 def get_describe(df):
     if st.checkbox('Describe'):
         st.dataframe(df.describe())
 
+# get columns name and type of CSV file 
 def get_columns(df):
     if st.checkbox('Columns name'):
         l, r = st.columns(2)
@@ -55,7 +57,7 @@ def get_columns(df):
             l.write({k: v for k, v in df.dtypes.to_dict().items() if v == i})
             l,r = r,l
 
-
+# get NA and NULL values 
 def get_isna_null(df):
     if st.checkbox('NaN and null values'):
         isna = pd.DataFrame(df.isna().sum().to_dict(), index=['isna()'])
@@ -63,12 +65,12 @@ def get_isna_null(df):
         na_nul = pd.concat([isna, isnull])
         st.dataframe(na_nul)
 
-
+# get duplicated rows 
 def get_duplicated(df):
     if st.checkbox('Duplicated rows'):
         st.write(df.duplicated().sum(), 'row(s) duplicated')
 
-# Visulaization ---------------------------------------------------------------
+# -------------------------------------------------------- Visulaization --------------------------------------------------------
 
 def bar_distribution(df):
     st.markdown('---')
@@ -98,9 +100,6 @@ def area_distribution(df):
         st.area_chart(df[var].value_counts())
 
 
-
-
-
 def kde_dist(df):
     st.markdown('---')
     st.markdown('#### Numerical features distribution')
@@ -111,6 +110,7 @@ def kde_dist(df):
         sns.displot(df,x=var, kind='kde', hue='label', fill=True)
         st.pyplot()
 
+        
 def bivariate(df):
     st.markdown('---')
     st.markdown('#### Numerical features distribution')
@@ -126,7 +126,7 @@ def bivariate(df):
 
 
 
-# MAIN FUNCTION --------------------------------------------------------
+# -------------------------------------------------------- MAIN FUNCTION --------------------------------------------------------
 def display_explore_data():
     st.title('Exploratory Data Analysis')
 
