@@ -28,3 +28,8 @@ This project is carried out using the [UNSW-15](https://research.unsw.edu.au/pro
 
 When launching the application, the following welcome image appears with all the features available in the IDS 
 ![Home page](images/IDS-Home.PNG)
+
+## Functionalities
+- **EDA (Exploratory Data Analysis)**
+- **Performances**
+- **Analyze pcap file**
