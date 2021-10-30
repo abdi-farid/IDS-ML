@@ -22,7 +22,7 @@ This project is carried out using the [UNSW-15](https://research.unsw.edu.au/pro
 - Linux
 
 ## Structure 
-![global Architecture](images/Architecture.png)
+![global Architecture](images/GlobalArchitecture.png)
 
 - ***main.py*** : This is the main page of the application, it calls the functions defined in the other files. The application is launched by typing : **streamlit run main.py**
 
