@@ -19,7 +19,7 @@ This project is carried out using the [UNSW-15](https://research.unsw.edu.au/pro
 
 ## Operating Systems
 - Windows
-- Linux
+- Linux (required for analyse operation)
 
 ## Structure 
 ![global Architecture](images/GlobalArchitecture.png)
