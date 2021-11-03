@@ -32,6 +32,6 @@ When launching the application, the following welcome image appears with all the
 ## Functionalities
 - **EDA (Exploratory Data Analysis)**
   - Demo
-  -[![demo](https://github.com/Bngfm/IDS-ML/blob/abad7434b91dc235f084fe03d23be57c43e8cf80/images/EDA%20home.PNG)]
+  -[![demo](https://github.com/Bngfm/IDS-ML/blob/abad7434b91dc235f084fe03d23be57c43e8cf80/images/EDA%20home.PNG)](https://github.com/Bngfm/IDS-ML/blob/5d8912ce2cf2b1b31bb0cb4dac12f0cf468964af/images/EDA.mp4)
 - **Performances**
 - **Analyze pcap file**
