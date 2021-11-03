@@ -31,5 +31,7 @@ When launching the application, the following welcome image appears with all the
 
 ## Functionalities
 - **EDA (Exploratory Data Analysis)**
+  - Demo
+  -![demo](images/EDA.mp4)
 - **Performances**
 - **Analyze pcap file**
