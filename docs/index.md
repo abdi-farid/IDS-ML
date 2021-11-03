@@ -1,7 +1,8 @@
 ## Welcome to IDS-ML
 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+IDS-ML is a design of an intrusion detection system using ensemble machine learning methods
+The functionality of analysing a dataset, displaying statistics and drawing numerical information in graphical form is available in IDS-ML
 
 ### Intrusion Detection System (Machine Learning)
 
